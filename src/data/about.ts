@@ -7,7 +7,7 @@ export const about = {
   /** Texte alternatif de la photo (accessibilité) */
   avatarAlt: "Portrait de Zounoogo Kourita",
   /** Chemin de la photo : dépose ton fichier dans public/ (ex: public/avatar.jpg) */
-  avatar: "/avatar.jpg",
+  avatar: "/avatar.png",
 
   paragraphs: [
     "Je suis étudiant en Master <accent>IoT & Big Data</accent> à l’INPT (Rabat). " +
