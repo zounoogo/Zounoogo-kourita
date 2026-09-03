@@ -78,6 +78,73 @@ export const projects: ProjectItem[] = [
   },
 
   // =====================================================================
+  //  ABSENCEIQ — stage INPT (réel) : OCR des fiches d’absence papier
+  // =====================================================================
+  {
+    slug: "absenceiq",
+    title:
+      "AbsenceIQ — numérisation des fiches d’absence papier par OCR (stage INPT)",
+    description:
+      "Application web full-stack développée en stage à l’INPT (encadrant " +
+      "Pr. Omar SOUISSI) pour digitaliser un processus administratif : " +
+      "transformer une photo de feuille d’absence papier en données " +
+      "exploitables. Pipeline de vision entièrement côté navigateur — " +
+      "préprocessing Canvas (redimensionnement à 1000 px, export JPEG 80 %), " +
+      "OCR Tesseract.js (modèle français, WebAssembly), puis parsing ligne à " +
+      "ligne (regex de date, filtrage des en-têtes). La mise en correspondance " +
+      "des noms d’élèves repose sur un score hybride maison combinant distance " +
+      "de Levenshtein (60 %) et similarité de Jaccard sur n-grammes (40 %), " +
+      "avec normalisation des accents et seuil de confiance 0,6, pour absorber " +
+      "les erreurs d’OCR. Backend Node.js/Express + MySQL (authentification " +
+      "bcrypt, modèles users/students/absences/logs). Au-delà d’un seuil de " +
+      "3 absences, l’outil envoie des e-mails d’avertissement personnalisés " +
+      "(EmailJS) et génère un rapport PDF multipage (jsPDF + html2canvas, " +
+      "auto-crop des marges, pied de page horodaté et signé). Architecture " +
+      "client-side pensée pour la confidentialité : traitement local, aucun " +
+      "transfert des données élèves.",
+    stack: [
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "Tesseract.js",
+      "OCR",
+      "Bootstrap 5",
+      "jsPDF",
+      "EmailJS",
+      "Canvas API",
+      "bcrypt",
+    ],
+    githubUrl: "https://github.com/zounoogo/Stage-Agent-As-a-service",
+    // TODO: uploader la vidéo de démo sur YouTube puis renseigner le lien ici
+    // (le type YouTube est détecté automatiquement) :
+    // videoUrl: "https://youtu.be/<ID>",
+    images: [
+      {
+        src: "/projects/absenceiq/interface.jpg",
+        alt: "Tableau de bord d’AbsenceIQ : configuration de la liste d’élèves, upload d’image, configuration des e-mails et zone de résultats",
+        caption: "Tableau de bord — configuration, analyse et résultats",
+      },
+      {
+        src: "/projects/absenceiq/workflow.png",
+        alt: "Schéma du workflow en 7 étapes : authentification, import des listes, capture et préprocessing, OCR, correspondance, export PDF et notifications",
+        caption: "Workflow complet — de l’authentification aux notifications",
+      },
+      {
+        src: "/projects/absenceiq/exemple-fiche-absence.jpg",
+        alt: "Exemple de fiche d’absence utilisée en entrée : colonnes Nom Prénom, Date et Motif",
+        caption: "Exemple de document d’entrée (fiche d’absence d’une classe)",
+      },
+    ],
+    links: [
+      {
+        label: "Rapport de stage (PDF)",
+        url: "/projects/absenceiq/rapport-stage-absenceiq.pdf",
+      },
+    ],
+  },
+
+  // =====================================================================
   //  DOMOTIQUE CLOUD — projet du cours « Protocoles & communications IoT »
   // =====================================================================
   {
