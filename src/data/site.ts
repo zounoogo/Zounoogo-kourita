@@ -23,10 +23,6 @@ export const site = {
    */
   resumeUrl: "/cv.pdf",
 
-  /**
-   * URL de production (utilisée pour les balises SEO / Open Graph).
-   * À mettre à jour après le déploiement Vercel.
-   */
   url: "https://zounoogo-kourita.vercel.app",
 
   /** Réseaux sociaux (affichés dans la sidebar et le footer). */
