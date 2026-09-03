@@ -145,6 +145,99 @@ export const projects: ProjectItem[] = [
   },
 
   // =====================================================================
+  //  ALMAYA — projet client full-stack : place de marché touristique
+  // =====================================================================
+  {
+    slug: "almaya",
+    title:
+      "ALMAYA — place de marché de services touristiques (full-stack React / Node)",
+    description:
+      "Application full-stack réalisée pour une petite entreprise de services " +
+      "touristiques (ALMAYA) : une place de marché de prestations et " +
+      "d’expériences touristiques au Maroc. SPA React 19 (React Router 7, " +
+      "Bootstrap 5) adossée à une API REST Express 5 + MySQL. " +
+      "Authentification par cookie JWT httpOnly / sameSite=Strict (expiration " +
+      "1 h), mots de passe hachés bcrypt (10 tours), vérification d’e-mail " +
+      "obligatoire avant connexion (jeton à usage unique envoyé via Nodemailer " +
+      "sur SMTP Gmail) et limitation de débit (5 tentatives / 15 min) sur les " +
+      "routes d’authentification. Le catalogue s’explore par catégories, " +
+      "destinations et offres ; le panier est persisté côté serveur par " +
+      "utilisateur (table cartitems, resynchronisée à chaque modification). " +
+      "La commande se finalise par un lien profond WhatsApp pré-rempli avec " +
+      "le contenu du panier (une page de paiement simulée complète le " +
+      "parcours, sans intégration d’un prestataire de paiement réel). Un " +
+      "espace d’administration protégé par rôle — contrôle appliqué côté " +
+      "serveur (authenticateToken + authorizeRole), pas seulement masqué dans " +
+      "l’interface — offre le CRUD complet des catégories, destinations et " +
+      "offres via six formulaires React. Requêtes SQL entièrement " +
+      "paramétrées. Déploiement en monorepo : backend sur Railway (build " +
+      "Nixpacks + MySQL managé), frontend sur Vercel, configuration par " +
+      "variables d’environnement. J’ai également mené un audit de code et de " +
+      "sécurité de mon propre projet (lecture directe du dépôt), formalisé " +
+      "dans un rapport de 10 sections classant forces, dette technique et " +
+      "failles par sévérité — démarche que je considère comme partie " +
+      "intégrante du livrable.",
+    stack: [
+      "React",
+      "React Router",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "JWT",
+      "bcrypt",
+      "Nodemailer",
+      "Bootstrap 5",
+      "Railway",
+      "Vercel",
+      "REST API",
+    ],
+    // TODO: publier le dépôt une fois l’historique git nettoyé et les secrets
+    // révoqués (mot de passe d’application Gmail, URL MySQL Railway et
+    // JWT_SECRET sont encore présents dans l’historique public) :
+    githubUrl: "https://github.com/zounoogo/Almaya",
+    // (application plus déployée — pas de demoUrl)
+    images: [
+      {
+        src: "/projects/almaya/architecture.png",
+        alt: "Schéma d’architecture 3-tiers : SPA React sur Vercel, API Express sur Railway, base MySQL managée, plus Gmail SMTP et lien profond WhatsApp",
+        caption:
+          "Architecture 3-tiers — React/Vercel, Express/Railway, MySQL, + SMTP Gmail et WhatsApp",
+      },
+      {
+        src: "/projects/almaya/accueil.jpg",
+        alt: "Page d’accueil connectée : grille des catégories de services avec, en vue administrateur, les boutons d’ajout / édition / suppression",
+        caption: "Accueil (session administrateur) — catégories et contrôles CRUD",
+      },
+      {
+        src: "/projects/almaya/destinations.jpg",
+        alt: "Page « Explorez nos destinations » : grille de villes marocaines avec vignettes",
+        caption: "Catalogue par destination",
+      },
+      {
+        src: "/projects/almaya/offres-categorie.jpg",
+        alt: "Liste des offres d’une catégorie : cartes avec image, prix en dirhams, durée, sélecteur de quantité et ajout au panier",
+        caption: "Offres d’une catégorie — ajout au panier et action admin « Ajouter une offre »",
+      },
+      {
+        src: "/projects/almaya/panier.jpg",
+        alt: "Page panier : tableau des articles avec prix, quantités, totaux, et bouton « Envoyer votre commande par WhatsApp »",
+        caption: "Panier persisté côté serveur — finalisation par WhatsApp",
+      },
+      {
+        src: "/projects/almaya/admin-creation-offre.jpg",
+        alt: "Formulaire d’administration de création d’offre, pré-rempli pour la catégorie Guide Touristique",
+        caption: "Espace admin — formulaire de création d’offre (route protégée par rôle)",
+      },
+    ],
+    links: [
+      {
+        label: "Rapport d’audit de l’application (PDF)",
+        url: "/projects/almaya/rapport-application-almaya.pdf",
+      },
+    ],
+  },
+
+  // =====================================================================
   //  DOMOTIQUE CLOUD — projet du cours « Protocoles & communications IoT »
   // =====================================================================
   {
