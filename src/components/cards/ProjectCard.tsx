@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { BadgeList } from "@/components/ui/Badge";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { VideoEmbed } from "@/components/media/VideoEmbed";
+import { ImageGallery } from "@/components/media/ImageGallery";
 import { GitHubIcon, ExternalLinkIcon } from "@/components/ui/Icons";
 
 /** Carte d'une réalisation de développement. */
@@ -48,11 +49,15 @@ export function ProjectCard({ item }: { item: ProjectItem }) {
 
       {item.videoUrl && <VideoEmbed url={item.videoUrl} title={item.title} />}
 
+      {item.images && item.images.length > 0 && (
+        <ImageGallery images={item.images} />
+      )}
+
       <div className="mt-4">
         <BadgeList items={item.stack} />
       </div>
 
-      {(item.githubUrl || item.demoUrl) && (
+      {(item.githubUrl || item.demoUrl || (item.links && item.links.length > 0)) && (
         <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           {item.githubUrl && (
             <ExternalLink href={item.githubUrl} showIcon={false}>
@@ -62,6 +67,11 @@ export function ProjectCard({ item }: { item: ProjectItem }) {
           {item.demoUrl && (
             <ExternalLink href={item.demoUrl}>Voir la démo</ExternalLink>
           )}
+          {item.links?.map((link) => (
+            <ExternalLink key={link.url} href={link.url}>
+              {link.label}
+            </ExternalLink>
+          ))}
         </div>
       )}
     </article>

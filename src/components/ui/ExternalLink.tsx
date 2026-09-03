@@ -17,18 +17,20 @@ export function ExternalLink({
   className,
   showIcon = true,
 }: ExternalLinkProps) {
+  // Lien interne (ancre sur la même page) : pas de nouvel onglet, pas d'icône.
+  const isAnchor = href.startsWith("#");
+
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      {...(isAnchor ? {} : { target: "_blank", rel: "noopener noreferrer" })}
       className={cn(
         "group inline-flex items-center gap-1.5 text-slate-light transition-colors hover:text-accent",
         className,
       )}
     >
       <span>{children}</span>
-      {showIcon && (
+      {showIcon && !isAnchor && (
         <ExternalLinkIcon className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
       )}
     </a>

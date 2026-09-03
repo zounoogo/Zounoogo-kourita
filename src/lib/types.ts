@@ -10,6 +10,16 @@ export interface NamedLink {
   url: string;
 }
 
+/** Image de galerie (capture d'écran, schéma, poster…). */
+export interface GalleryImage {
+  /** chemin local ("/projects/mon-projet/vue.jpg") ou URL */
+  src: string;
+  /** texte alternatif (accessibilité) — décris ce que montre l'image */
+  alt: string;
+  /** légende affichée sous l'image (optionnel) */
+  caption?: string;
+}
+
 /** Une activité de recherche (section « Recherche »). */
 export interface ResearchItem {
   /** identifiant court et unique (key React + ancre éventuelle) */
@@ -57,6 +67,14 @@ export interface ProjectItem {
    * Optionnel : si absent, aucun lecteur n'est affiché.
    */
   videoUrl?: string;
+  /**
+   * Captures d'écran / schémas du projet. Affichées en galerie (grille +
+   * ouverture plein écran au clic). Dépose les fichiers dans
+   * public/projects/<slug>/ puis référence-les ici.
+   */
+  images?: GalleryImage[];
+  /** liens complémentaires (rapport, article, poster, doc technique…) */
+  links?: NamedLink[];
   /** met la carte légèrement en avant */
   featured?: boolean;
 }

@@ -10,30 +10,57 @@ import type { ResearchItem } from "@/lib/types";
  *   2. URL externe (Google Drive) → utilise le lien de type « preview » :
  *      pdfUrl: "https://drive.google.com/file/d/<ID>/preview"
  * `pdfPreview: true` affiche l'aperçu intégré ; sinon on n'a que les boutons.
- *
- * Les 3 exemples ci-dessous illustrent les 3 cas (aperçu / lien seul / sans PDF).
  */
 export const research: ResearchItem[] = [
-  // --- Cas 1 : PDF local AVEC aperçu intégré -------------------------------
+  // =====================================================================
+  //  PROJET DE R&D — réel (INPT, 2024/2025)
+  // =====================================================================
   {
-    slug: "pfe-anomaly-detection",
-    title: "PFE — Détection d’anomalies sur flux de capteurs IoT",
-    period: "Fév. 2025 – Juin 2025",
-    affiliation: "Encadrant : Pr. A. Exemple — INPT Rabat",
+    slug: "edge-pqc-rd",
+    title:
+      "Projet de R&D — IoT Edge Computing & cryptographie post-quantique (Edge PQC)",
+    period: "2024 – 2025",
+    affiliation:
+      "Projet de Recherche & Développement · Encadrant : Pr. Omar SOUISSI — INPT / ANRT, filière IoT & Big Data",
     description:
-      "Projet de fin d’études : pipeline temps réel de détection d’anomalies " +
-      "sur des séries temporelles multivariées issues de capteurs industriels. " +
-      "Comparaison d’autoencodeurs, d’Isolation Forest et de méthodes à base de " +
-      "prédiction, avec évaluation sur données réelles et synthétiques.",
-    tags: ["Séries temporelles", "Autoencodeurs", "PyTorch", "Kafka", "Anomaly detection"],
-    pdfUrl: "/research/pfe-rapport.pdf",
+      "Conception, implémentation et évaluation d’une infrastructure de " +
+      "communication IoT sécurisée combinant cryptographie classique et " +
+      "post-quantique (PQC). Architecture à trois niveaux — capteurs simulés " +
+      "(MQTT), passerelle Edge appliquant un chiffrement hybride par message, " +
+      "et serveur central (Flask + SQLite) avec tableau de bord temps réel. " +
+      "L’étude compare classique (AES-256-GCM + RSA-2048-OAEP + ECDSA) et PQC " +
+      "(ML-KEM-768/Kyber + AES-256-GCM + ML-DSA-65/Dilithium) sur la latence, " +
+      "le CPU, la mémoire et la taille des messages. Résultat : compromis net " +
+      "entre efficacité (classique ~0,5 ms, ~1,1 ko) et résilience quantique " +
+      "(PQC ~2–7 ms, ~9,2 ko), et proposition d’une stratégie de migration " +
+      "hybride progressive.",
+    tags: [
+      "Post-Quantum Cryptography",
+      "ML-KEM / Kyber",
+      "ML-DSA / Dilithium",
+      "Edge Computing",
+      "IoT",
+      "MQTT",
+      "Benchmark de performance",
+      "Python",
+    ],
+    pdfUrl: "/research/edge-pqc-rapport-rd.pdf",
     pdfPreview: true,
     links: [
-      { label: "Code du pipeline", url: "https://github.com/zounoogo" },
+      // Ajoute ici le dépôt de code une fois publié sur GitHub :
+      // { label: "Code source", url: "https://github.com/zounoogo/edge-pqc" },
+      {
+        label: "Détails techniques (section Développement)",
+        url: "#development",
+      },
     ],
   },
 
-  // --- Cas 2 : PDF hébergé en externe, SANS aperçu (lien seul) -------------
+  // =====================================================================
+  //  EXEMPLES À REMPLACER / SUPPRIMER  (gabarits pour tes prochaines entrées)
+  // =====================================================================
+
+  // --- Gabarit : PDF hébergé en externe, sans aperçu (lien seul) ---------
   {
     slug: "phd-proposal-federated",
     title: "Proposition de thèse — Apprentissage fédéré pour l’edge IoT",
@@ -44,12 +71,11 @@ export const research: ResearchItem[] = [
       "collaboratif de modèles sur des nœuds edge contraints, sans centraliser " +
       "les données, avec un focus sur la robustesse aux clients hétérogènes.",
     tags: ["Federated learning", "Edge computing", "Privacy", "Optimisation"],
-    // Remplace par ton vrai lien Drive au format .../preview
     pdfUrl: "https://drive.google.com/file/d/1AbCdEfGhIjKlMnOpQrStUvWxYz/preview",
     pdfPreview: false,
   },
 
-  // --- Cas 3 : AUCUN PDF, seulement des liens -----------------------------
+  // --- Gabarit : aucun PDF, seulement des liens ------------------------
   {
     slug: "reading-graph-neural-nets",
     title: "Étude bibliographique — Graph Neural Networks pour la mobilité urbaine",
