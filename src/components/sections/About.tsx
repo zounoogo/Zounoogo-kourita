@@ -13,9 +13,9 @@ export function About() {
             src={about.avatar}
             alt={about.avatarAlt}
             width={400}
-            height={400}
+            height={480}
             priority
-            className="relative z-10 rounded-lg object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
+            className="relative z-10 aspect-[5/6] w-full rounded-lg object-cover object-[center_20%] grayscale transition-all duration-300 group-hover:grayscale-0"
           />
           <span
             aria-hidden

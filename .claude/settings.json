@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "Bash(ls -lat \"C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Desktop-phd-portfolio/b5a268ae-ae2b-4972-9077-e4d9bbe29687/scratchpad\" 2>/dev/null; echo \"---temp images---\"; find \"C:/Users/HP/AppData/Local/Temp\" -maxdepth 3 -iname \"*.jpg\" -o -iname \"*.png\" 2>/dev/null | grep -i -E \"clip|paste|image|screenshot\" | head; echo \"---recent Downloads---\"; ls -lat \"C:/Users/HP/Downloads\" 2>/dev/null | head -10; echo \"---Desktop recent images---\"; find \"C:/Users/HP/Desktop\" -maxdepth 2 -iname \"*.jpg\" -newermt \"2026-09-01\" 2>/dev/null | head)",
+      "Read(//c/Users/HP/AppData/Local/Temp/**)",
+      "Read(//c/Users/HP/Downloads/**)",
+      "Read(//c/Users/HP/Desktop/**)",
+      "PowerShell(Add-Type -AssemblyName System.Windows.Forms; $img = [System.Windows.Forms.Clipboard]::GetImage\\(\\); if \\($img\\) { $img.Save\\(\"C:\\\\Users\\\\HP\\\\Desktop\\\\phd\\\\portfolio\\\\public\\\\avatar.jpg\", [System.Drawing.Imaging.ImageFormat]::Jpeg\\); \"saved $\\($img.Width\\)x$\\($img.Height\\)\" } else { \"clipboard has no image\" })",
+      "Bash(find \"C:/Users/HP/AppData\" \"C:/Users/HP/Desktop\" -iname \"*.jpg\" -newermt \"2026-09-03 20:00\" 2>/dev/null | grep -v node_modules | head -20)",
+      "Read(//c/Users/HP/AppData/**)"
+    ]
+  }
+}

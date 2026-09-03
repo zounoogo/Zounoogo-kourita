@@ -55,40 +55,4 @@ export const research: ResearchItem[] = [
       },
     ],
   },
-
-  // =====================================================================
-  //  EXEMPLES À REMPLACER / SUPPRIMER  (gabarits pour tes prochaines entrées)
-  // =====================================================================
-
-  // --- Gabarit : PDF hébergé en externe, sans aperçu (lien seul) ---------
-  {
-    slug: "phd-proposal-federated",
-    title: "Proposition de thèse — Apprentissage fédéré pour l’edge IoT",
-    period: "2025",
-    affiliation: "Candidature doctorat — laboratoire à confirmer",
-    description:
-      "Note de recherche préparée pour mes candidatures : entraînement " +
-      "collaboratif de modèles sur des nœuds edge contraints, sans centraliser " +
-      "les données, avec un focus sur la robustesse aux clients hétérogènes.",
-    tags: ["Federated learning", "Edge computing", "Privacy", "Optimisation"],
-    pdfUrl: "https://drive.google.com/file/d/1AbCdEfGhIjKlMnOpQrStUvWxYz/preview",
-    pdfPreview: false,
-  },
-
-  // --- Gabarit : aucun PDF, seulement des liens ------------------------
-  {
-    slug: "reading-graph-neural-nets",
-    title: "Étude bibliographique — Graph Neural Networks pour la mobilité urbaine",
-    period: "Nov. 2024 – Jan. 2025",
-    affiliation: "Travail personnel encadré",
-    description:
-      "Synthèse d’une dizaine d’articles sur la prévision de trafic à base de " +
-      "GNN spatio-temporels, avec reproduction partielle des résultats de deux " +
-      "papiers de référence.",
-    tags: ["GNN", "Prévision de trafic", "PyTorch Geometric", "Reproductibilité"],
-    links: [
-      { label: "Notes de lecture", url: "https://github.com/zounoogo" },
-      { label: "Notebook de reproduction", url: "https://github.com/zounoogo" },
-    ],
-  },
-];
+]
