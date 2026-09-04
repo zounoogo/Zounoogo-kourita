@@ -55,4 +55,49 @@ export const research: ResearchItem[] = [
       },
     ],
   },
+
+  // =====================================================================
+  //  PROJET DE RECHERCHE — Quantum Machine Learning pour l'IoT (INPT, S3)
+  // =====================================================================
+  {
+    slug: "qml-iot-intrusion-detection",
+    title:
+      "Étude empirique — Quantum Machine Learning pour la détection d'intrusion IoT",
+    period: "2026",
+    affiliation:
+      "Projet de recherche personnel (Projet S3) · INPT, filière IoT & Big Data",
+    description:
+      "Revue de littérature (~25 articles, 2020–2026) sur le QML appliqué à la " +
+      "détection d'intrusion réseau en IoT, suivie d'une étude empirique sur le " +
+      "dataset DataSense (CIC IIoT 2025, ~75 000 échantillons, 71 features, " +
+      "détection binaire d'attaque). Un classifieur quantique variationnel " +
+      "(VQC, PennyLane — encodage par angle avec re-upload, 4/6/8 qubits, " +
+      "1 à 3 couches) est comparé à des baselines classiques (Régression " +
+      "logistique, Random Forest) à taille d'échantillon et nombre de features " +
+      "strictement appariés, sur 5 graines aléatoires et avec test de " +
+      "significativité (Welch). Résultat honnête : à cette échelle (simulateur " +
+      "sans bruit, jusqu'à 8 qubits), le Random Forest devance le meilleur VQC " +
+      "de 4 à 5 points de F1 (p < 0,01) ; la profondeur du circuit compte plus " +
+      "que le nombre de qubits, et l'écart ne se referme pas avec plus de " +
+      "données d'entraînement.",
+    tags: [
+      "Quantum Machine Learning",
+      "PennyLane",
+      "Variational Quantum Classifier",
+      "IoT Security",
+      "Détection d'intrusion",
+      "scikit-learn",
+      "Revue de littérature",
+      "Python",
+    ],
+    pdfUrl: "/research/qml-iot-research-statement.pdf",
+    pdfPreview: true,
+    links: [
+      { label: "Article complet (PDF)", url: "/research/qml-iot-paper.pdf" },
+      {
+        label: "Dépôt GitHub (code, données, résultats)",
+        url: "https://github.com/zounoogo/Projet-S3",
+      },
+    ],
+  },
 ]

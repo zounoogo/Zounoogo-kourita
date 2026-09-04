@@ -11,7 +11,13 @@
       "Read(//c/Users/HP/AppData/**)",
       "Bash(cd \"/c/Users/HP/Desktop/INPT/Travail/Almaya\" && find . -maxdepth 3 -not -path '*/node_modules/*' -not -path '*/.git/*' | head -200)",
       "Read(//c/Users/HP/Desktop/INPT/Travail/Almaya/**)",
-      "Bash(echo \"exit: $? \\(1 = no matches = good\\)\")"
+      "Bash(echo \"exit: $? \\(1 = no matches = good\\)\")",
+      "Bash(ls -la \"C:\\\\Users\\\\HP\\\\Desktop\\\\INPT\\\\S3\\\\S3-P1\\\\\" 2>&1; echo \"---\"; ls -la \"C:\\\\Users\\\\HP\\\\Desktop\\\\INPT\\\\S3\\\\S3-P1\\\\S3_Project\" 2>&1)",
+      "Read(//c/Users/HP/Desktop/INPT/S3/**)",
+      "Read(//c/Users/HP/Desktop/INPT/S3/S3-P1/**)",
+      "Bash(find \"/c/Users/HP/Desktop/INPT/S3/S3-P1\" -maxdepth 1 -type d 2>&1)",
+      "Bash(find \"/c/Users/HP/Desktop/INPT/S3/S3-P1/S3_Project\" -maxdepth 3 2>&1 | head -150)",
+      "Read(//c/Users/HP/Desktop/INPT/S3/S3-P1/S3_Project/**)"
     ]
   }
 }
