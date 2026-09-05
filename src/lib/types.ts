@@ -30,6 +30,12 @@ export interface ResearchItem {
   /** encadrant / institution, ex: "Encadrant : Pr. X — INPT Rabat" */
   affiliation: string;
   description: string;
+  /**
+   * Résumé officiel (abstract) de la publication, en anglais et verbatim.
+   * À utiliser quand l'article complet n'est pas (encore) public : seuls le
+   * résumé et les auteurs sont alors affichés, jamais le texte intégral.
+   */
+  abstract?: string;
   /** technos / mots-clés → badges */
   tags: string[];
   /**

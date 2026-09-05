@@ -21,6 +21,15 @@ export function ResearchCard({ item }: { item: ResearchItem }) {
           {item.description}
         </p>
 
+        {item.abstract && (
+          <blockquote className="mt-3 border-l-2 border-navy-lighter pl-3 text-sm italic leading-relaxed text-slate">
+            <p className="mb-1 not-italic font-mono text-xs uppercase tracking-wider text-slate">
+              Abstract
+            </p>
+            {item.abstract}
+          </blockquote>
+        )}
+
         {item.tags.length > 0 && (
           <div className="mt-4">
             <BadgeList items={item.tags} />
